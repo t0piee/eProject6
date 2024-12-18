@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>HaoTHN</title>
+    <script>
+        const kiemtra = () => {
+            //1. Login name
+            var sName = document.getElementById("txtName").value;
+            var reName = /^[A-Za-z0-9]+$/;  //(1) 
+            if (!reName.test(sName)) {      //(2)
+                alert("Login name can't left blank!");
+                document.getElementById("txtName").classList.add("error");
+                return false;
+            } else {
+                document.getElementById("txtName").classList.remove("error");
+            }
+            //2.Email
+            var sMail = document.getElementById("txtMail").value;
+            var reMail = /^\w+[@]\w+[.]\w+([.]\w+)?$/;
+            if (!reMail.test(sMail)) {
+                alert("Invalid email format!");
+                document.getElementById("txtMail").classList.add("error"); //selected()
+                return false;
+            } else {
+                document.getElementById("txtMail").classList.remove("error");
+            }
+            //3. Password
+            var sPassword = document.getElementById("txtPassword").value;
+            var rePassword = /^[A-Za-z0-9]{3,18}$/;
+            if (!rePassword.test(sPassword)) {
+                alert("Password must be between 3 and 18 characters !");
+                document.getElementById("txtPassword").classList.add("error"); //selected()
+                return false;
+            } else {
+                document.getElementById("txtPassword").classList.remove("error");
+            }
+            //4.ConfirmPassword
+            var sconfirmPassword = document.getElementById('txtconfirmPassword').value;
+            if (sPassword != sconfirmPassword) {
+                alert('Passwords do not match.');
+                document.getElementById("txtconfirmPassword").classList.add("error");
+                return false;
+            } else {
+                document.getElementById("txtconfirmPassword").classList.remove("error");
+            }
+            //
+            var data = "Infomation";
+            data += "\n-------------------";
+            data += "\n Login name: " + sName;
+            data += "\n Email: " + sMail;
+            alert(data);
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            Logo
+        </div>
+        <div class="myNav">
+            <a href="./Hao.html">Home</a>
+            <a href="">Untilities</a>
+            <a href="">Share</a>
+            <a href="">Knowledge</a>
+            <a href="./HaoTHN.html">SignUp</a>
+            <a href="">SignIn</a>
+            <a href="">About us</a>
+    </header>
+    <section>
+        <center>
+            <h1 align="center">Register Form</h1>
+            <hr width='20%'>
+            <form action="./Khoa.html" onsubmit="return kiemtra();">
+                <table width="150%">
+                    <t>
+                        <td align="right">Login name: </td>
+                        <td>
+                            <input id="txtName" placeholder="Enter Login name" autofocus>
+                        </td>
+                        <tr>
+                            <td align="right">Email: </td>
+                            <td>
+                                <input id="txtMail" placeholder="Enter Email">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">Password: </td>
+                            <td>
+                                <input id="txtPassword" placeholder="Enter Password">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">Comfirmed password</td>
+                            <td>
+                                <input id="txtconfirmPassword" placeholder="Enter Password">
+                            </td>
+                        </tr>
+                        <tr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"></td>
+                            <td>
+                                <input type="submit" value="Submit" class="btn btn-primary">
+                                <input type="Reset" value="Reset" class="btn">
+                            </td>
+                        </tr>
+                </table>
+        </center>
+    </section>
+    <footer>
+        &copy;
+    </footer>
+</body>
+
+</html>

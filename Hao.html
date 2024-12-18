@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/Style.css">
+    <title>Hao</title>
+    <script>
+        function kiemtra() {
+            var sName = document.getElementById("txtName").value;
+            var sPass = document.getElementById("txtPass").value;
+
+            if ((sName != "aptech") || (sPass != "123")) {
+                alert("Username or Password are incorrect");
+                document.getElementById("txtName").focus();
+                return false;
+            }
+            alert("Welcome Aptech, login successfully");
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            Logo
+        </div>
+        <div class="myNav">
+            <a href="./Hao.html">Home</a>
+            <a href="">Untilities</a>
+            <a href="">Share</a>
+            <a href="">Knowledge</a>
+            <a href="./HaoTHN.html">SignUp</a>
+            <a href="">SignIn</a>
+            <a href="">About us</a>
+        </div>
+    </header>
+    <section>
+        <div class="divLeft">
+            <img src="./images/bgIndex.jpg" width="550">
+        </div>
+        <div class="divRight">
+            <center>
+                <h1>SignIn Form</h1>
+                <hr align="center" width="40%">
+                <form action="" onsubmit="return kiemtra();">
+                    <table>
+                        <tr>
+                            <td align="right">User Name:</td>
+                            <td>
+                                <input class="myControl" id="txtName" autofocus>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">Password:</td>
+                            <td>
+                                <input class="myControl" type="password" id="txtPass" autofocus>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td align="right">Already have an account? <a href="./HaoTHN.html">Sign Up</a></td>
+                        </tr>
+                        <tr>
+                            <td align="left"></td>
+                            <td>
+                                <input type="submit" value="Login" class="button">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </center>
+        </div>
+    </section>
+    <footer>
+        &copy;
+    </footer>
+</body>
+
+</html>
